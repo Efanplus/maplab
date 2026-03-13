@@ -125,3 +125,29 @@ Local docs can be built:
 ```bash
 cd docs && pip install -r requirements.txt && make html
 ```
+
+---
+
+## Architecture Documentation
+
+A comprehensive architecture document covering all VSLAM submodules is available at:
+
+**[`docs/pages/ARCHITECTURE.md`](docs/pages/ARCHITECTURE.md)**
+
+It covers:
+- System overview and module directory mapping
+- VI-Map data structure (Mission / Vertex / Edge / Landmark hierarchy)
+- Visual front-end: aslam_cv2 (camera models, feature tracking pipeline)
+- Online mapping front-end: ROVIOLI (ROVIO iEKF + async map building)
+- General mapping node: maplab-node
+- IMU preintegration (RK4, covariance propagation)
+- Feature tracking and loop closure (ORB/BRISK/FREAK, IMI/HNSW, PnP RANSAC)
+- Landmark triangulation (DLT N-view, LiDAR averaging)
+- Bundle adjustment (all Ceres residual terms, observability analysis, outlier rejection)
+- Multi-robot mapping: maplab-server (submap merge workflow)
+- Offline console plugin system (all plugin commands)
+- Dense reconstruction (SGBM stereo, TSDF depth integration, PMVS export)
+- Map sparsification (keyframe pruning, ILP landmark compression)
+- Message-flow pub/sub system
+- Coordinate frame conventions
+- Typical workflows (single-session, multi-session, multi-robot, localization mode)

@@ -17,6 +17,23 @@ This repository contains **maplab 2.0**, an open research-oriented mapping frame
 
 **For documentation, tutorials and datasets, please visit the [wiki](https://maplab.asl.ethz.ch/index.html).**
 
+## Architecture Documentation
+
+A comprehensive architecture reference (in Chinese) covering all VSLAM submodules and data-flow is available in this repository:
+
+**[`docs/pages/ARCHITECTURE.md`](docs/pages/ARCHITECTURE.md)**
+
+Topics covered:
+- VI-Map data structure (Mission / Vertex / Edge / Landmark)
+- Online mapping front-end: ROVIOLI pipeline and ROVIO iEKF estimator
+- IMU preintegration (RK4, covariance propagation)
+- Feature tracking: ORB detection, BRISK/FREAK descriptors, gyro-aided tracker
+- Loop closure: descriptor projection, IMI/HNSW search, PnP RANSAC verification
+- Bundle adjustment: Ceres residual terms, observability analysis, outlier rejection
+- Multi-robot mapping: maplab-server submap merge workflow
+- Dense reconstruction, map sparsification, message-flow system
+- Coordinate frame conventions and typical workflows
+
 ## Features
 
 ### Robust visual-inertial odometry with localization
